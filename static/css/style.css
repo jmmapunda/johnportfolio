@@ -1,7 +1,8 @@
-html,body{
+body{
   margin: 0;
   padding: 0;
   height: 100vh;
+  width: 100vw;
   font-family: "PT Serif", serif;
   font-weight: 400;
   font-style: normal;
@@ -9,7 +10,10 @@ html,body{
   background-color: #E3E3E3;
   /* overflow-x: hidden; */
 }
-
+* {
+  max-width: 100%;
+  box-sizing: border-box;
+}
 h1{
   font-family: "PT Serif", serif;
   font-weight: 700;
@@ -22,6 +26,7 @@ h1{
   font-size: 3rem;
   align-items: center;
   padding: 1vw;
+  flex-wrap: wrap;
 }
 h2 {
   z-index: 1; /* Keeps it above any overlapping elements */
@@ -32,13 +37,16 @@ h2 {
   top: 0; /* Ensures it starts at the top */
   font-weight: 500;
 }
-
+header{
+  width: 100vw;
+}
 /* Center navbar content */
 .navbar {
   display: flex;
   justify-content: center; /* Centers navbar content horizontally */
   align-items: center; /* Centers navbar content vertically */
-  width: 100%;
+  width: 100vw;
+  flex-wrap: wrap;
 }
 
 /* Ensure navbar links are centered */
@@ -46,34 +54,35 @@ h2 {
   display: flex;
   justify-content: center;
   width: 100%;
+  flex-wrap: wrap;
   text-align: center; /* Align text inside dropdown */
 }
 .navbar-brand {
   margin-right: auto; /* Keeps brand logo aligned */
   margin-left: auto; /* Centers brand logo */
   text-align: center; /* Ensures text stays centered */
-  padding: 10px 0; /* Adds spacing between items */
+  /* padding: 10px 0; Adds spacing between items */
 
 }
 
 /* Make sure dropdown menu items are centered */
 .navbar-collapse {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   flex-direction: column;
   align-items: center; /* Centers dropdown items */
-}
-
-.nav-item {
-  padding: 10px 0; /* Adds spacing between items */
 }
 
 /* Ensures the dropdown menu aligns center */
 .navbar-nav .dropdown-menu {
   text-align: center; /* Centers text inside the dropdown */
   display: flex;
+  flex-wrap: wrap;
   flex-direction: column;
   align-items: center;
+  margin: 0;
+  padding: 0;
 }
 
 .navbar-toggler-icon {
@@ -105,6 +114,7 @@ h2 {
   width: calc(100vw - 10px);
   height: auto;
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-around; /* Ensures spacing between languages and tools */
   align-items: flex-start; /* Aligns items to the top */
   flex-wrap: wrap; /* Allows items to wrap on smaller screens */
@@ -151,6 +161,7 @@ h2 {
 } */
 footer {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between; /* Distribute space between sections */
   align-items: center;
   padding: 20px;
@@ -158,6 +169,7 @@ footer {
   color: #E3E3E3;
   flex-wrap: wrap; /* Allows wrapping for small screens */
   width: 100vw;
+  font-size: 1.1em;
 }
 
 /* Adjust footer1 to be slightly wider */
