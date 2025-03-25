@@ -203,4 +203,19 @@ footer {
   position: relative; /* Helps control overlapping */
 
 }
+.menu img{
+  width: 200px;
+  height: 150px;
+}
+.scroll-container {
+  overflow-x: auto;
+  white-space: nowrap;
+}
 
+.row.flex-nowrap {
+  flex-wrap: nowrap;
+}
+.categolies img{
+  width: 50px;
+  height: 50px;
+}
