@@ -219,3 +219,21 @@ footer {
   width: 50px;
   height: 50px;
 }
+.lang_icon {
+  display: flex; /* Align items in a row */
+  align-items: center; /* Vertically center text with the image */
+  gap: 10px; /* Space between the image and text */
+}
+
+.lang_icon img {
+
+  border-radius: 5px;
+  object-fit: cover;
+}
+
+.lang_icon span {
+  white-space: nowrap; /* Prevent text from wrapping */
+  font-size: 14px;
+  color: #333;
+}
+
