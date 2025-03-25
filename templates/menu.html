@@ -11,37 +11,21 @@
     <link rel="icon" type="image/png" href="/static/assets/image/JM_logo.png">
 </head>
 <body>
-    <div></div>
     <div>
-        <div>
-            <div class="container text-center">
+        
+    </div>
+    <div>
+        <div class="categolies">
+            <div class="container text-center"><h2>SloCodeDeveloper Reustaurant</h2>
                 <div class="scroll-container">
-                    <div class="row flex-nowrap categolies">
-                        
-                        <div class="lang_icon col">
-                            <img src="/static/assets/image/menu/BBQ Burger.webp" alt="Burgers">
-                            <span>Burgers</span>
-                        </div>
-                        <div class="lang_icon col">
-                            <img src="/static/assets/image/menu/BBQ Chicken pizza.jpg" alt="Pizzas">
-                            <span>Pizzas</span>
-                        </div>
-                        <div class="lang_icon col">
-                            <img src="/static/assets/image/menu/Coke.png" alt="Drinks">
-                            <span>Drinks</span>
-                        </div>
-                        <div class="lang_icon col">
-                            <img src="/static/assets/image/menu/Chocolate Cake.jpg" alt="Desserts">
-                            <span>Desserts</span>
-                        </div>
-                        <div class="lang_icon col">
-                            <img src="/static/assets/image/menu/Chicken Alfredo.jpg" alt="Pasta">
-                            <span>Pasta</span>
-                        </div>
-                        <div class="lang_icon col">
-                            <img src="/static/assets/image/menu/Fish & Chips.jpeg" alt="Seafood">
-                            <span>Seafood</span>
-                        </div>
+                    <div class="row flex-nowrap">
+                        {% for category, data in menudata.items(): %}
+                        <a href="#{{ category }}" class="lang_icon col"><div >
+                            <img src="/static/assets/image/menu/{{ data['url'] }}" alt="{{ category }}">
+                            <span>{{ category }}</span>
+                        </div></a>
+                        {% endfor %}
+
                     </div>
                 </div>
             </div>
@@ -50,128 +34,16 @@
         <div>
             <div class="menu">
                 <div class="row row-cols-1">
-                <div class="lang_icon col">
-                    <img src="/static/assets/image/menu/Cheese Burger.jpg" alt="Cheese Burger">
-                    <span>Beef patty, cheese, lettuce, tomato (TZS 8,000)</span>
+                    {% for category, data in menudata.items(): %}
+                        {% for item, item_data in data["items"].items(): %}
+                <div class="lang_icon col" id="{{ category }}">
+                    <img src="/static/assets/image/menu/{{ item_data['url'] }}" alt="{{ item }}">
+                    <span>{{ item }}: {{ item_data['description'] }} (TZS {{ item_data['price'] }})</span>
                 </div>
-                <div class="lang_icon col">
-                    <img src="/static/assets/image/menu/BBQ Burger.webp" alt="BBQ Burger">
-                    <span>Grilled beef, BBQ sauce, onions (TZS 9,500)</span>
-                </div>
-                <div class="lang_icon col">
-                    <img src="/static/assets/image/menu/Veggie Burger.jpg" alt="Veggie Burger">
-                    <span>Plant-based patty, lettuce, mayo (TZS 7,500)</span>
-                </div>
-                <div class="lang_icon col">
-                    <img src="/static/assets/image/menu/Spicy Burger.jpg" alt="Spicy Burger">
-                    <span>Jalapeños, spicy sauce, beef (TZS 10,000)</span>
-                </div>
-                <div class="lang_icon col">
-                    <img src="/static/assets/image/menu/Mushroom Burger.jpg" alt="Mushroom Burger">
-                    <span>Mushrooms, Swiss cheese, beef (TZS 9,000)</span>
-                </div>
-                <div class="lang_icon col">
-                    <img src="/static/assets/image/menu/Margherita.jpg" alt="Margherita">
-                    <span>Tomato, mozzarella, basil (TZS 12,000)</span>
-                </div>
-                <div class="lang_icon col">
-                    <img src="/static/assets/image/menu/Pepperoni.jpeg" alt="Pepperoni">
-                    <span>Pepperoni, cheese, tomato sauce (TZS 14,000)                    </span>
-                </div>
-                <div class="lang_icon col">
-                    <img src="/static/assets/image/menu/Cheese Burger.jpg" alt="Cheese Burger">
-                    <span>Beef patty, cheese, lettuce, tomato (TZS 8,000)</span>
-                </div>
-                <div class="lang_icon col">
-                    <img src="/static/assets/image/menu/Cheese Burger.jpg" alt="Cheese Burger">
-                    <span>Beef patty, cheese, lettuce, tomato (TZS 8,000)</span>
-                </div>
-                <div class="lang_icon col">
-                    <img src="/static/assets/image/menu/Cheese Burger.jpg" alt="Cheese Burger">
-                    <span>Beef patty, cheese, lettuce, tomato (TZS 8,000)</span>
-                </div>
-                <div class="lang_icon col">
-                    <img src="/static/assets/image/menu/Cheese Burger.jpg" alt="Cheese Burger">
-                    <span>Beef patty, cheese, lettuce, tomato (TZS 8,000)</span>
-                </div>
-                <div class="lang_icon col">
-                    <img src="/static/assets/image/menu/Cheese Burger.jpg" alt="Cheese Burger">
-                    <span>Beef patty, cheese, lettuce, tomato (TZS 8,000)</span>
-                </div>
-                <div class="lang_icon col">
-                    <img src="/static/assets/image/menu/Cheese Burger.jpg" alt="Cheese Burger">
-                    <span>Beef patty, cheese, lettuce, tomato (TZS 8,000)</span>
-                </div>
-                <div class="lang_icon col">
-                    <img src="/static/assets/image/menu/Cheese Burger.jpg" alt="Cheese Burger">
-                    <span>Beef patty, cheese, lettuce, tomato (TZS 8,000)</span>
-                </div>
-                <div class="lang_icon col">
-                    <img src="/static/assets/image/menu/Cheese Burger.jpg" alt="Cheese Burger">
-                    <span>Beef patty, cheese, lettuce, tomato (TZS 8,000)</span>
-                </div>
-                <div class="lang_icon col">
-                    <img src="/static/assets/image/menu/Cheese Burger.jpg" alt="Cheese Burger">
-                    <span>Beef patty, cheese, lettuce, tomato (TZS 8,000)</span>
-                </div>
-                <div class="lang_icon col">
-                    <img src="/static/assets/image/menu/Cheese Burger.jpg" alt="Cheese Burger">
-                    <span>Beef patty, cheese, lettuce, tomato (TZS 8,000)</span>
-                </div>
-                <div class="lang_icon col">
-                    <img src="/static/assets/image/menu/Cheese Burger.jpg" alt="Cheese Burger">
-                    <span>Beef patty, cheese, lettuce, tomato (TZS 8,000)</span>
-                </div>
-                <div class="lang_icon col">
-                    <img src="/static/assets/image/menu/Cheese Burger.jpg" alt="Cheese Burger">
-                    <span>Beef patty, cheese, lettuce, tomato (TZS 8,000)</span>
-                </div>
-                <div class="lang_icon col">
-                    <img src="/static/assets/image/menu/Cheese Burger.jpg" alt="Cheese Burger">
-                    <span>Beef patty, cheese, lettuce, tomato (TZS 8,000)</span>
-                </div>
-                <div class="lang_icon col">
-                    <img src="/static/assets/image/menu/Cheese Burger.jpg" alt="Cheese Burger">
-                    <span>Beef patty, cheese, lettuce, tomato (TZS 8,000)</span>
-                </div>
-                <div class="lang_icon col">
-                    <img src="/static/assets/image/menu/Cheese Burger.jpg" alt="Cheese Burger">
-                    <span>Beef patty, cheese, lettuce, tomato (TZS 8,000)</span>
-                </div>
-                <div class="lang_icon col">
-                    <img src="/static/assets/image/menu/Cheese Burger.jpg" alt="Cheese Burger">
-                    <span>Beef patty, cheese, lettuce, tomato (TZS 8,000)</span>
-                </div>
-                <div class="lang_icon col">
-                    <img src="/static/assets/image/menu/Cheese Burger.jpg" alt="Cheese Burger">
-                    <span>Beef patty, cheese, lettuce, tomato (TZS 8,000)</span>
-                </div>
-                <div class="lang_icon col">
-                    <img src="/static/assets/image/menu/Cheese Burger.jpg" alt="Cheese Burger">
-                    <span>Beef patty, cheese, lettuce, tomato (TZS 8,000)</span>
-                </div>
-                <div class="lang_icon col">
-                    <img src="/static/assets/image/menu/Cheese Burger.jpg" alt="Cheese Burger">
-                    <span>Beef patty, cheese, lettuce, tomato (TZS 8,000)</span>
-                </div>
-                <div class="lang_icon col">
-                    <img src="/static/assets/image/menu/Cheese Burger.jpg" alt="Cheese Burger">
-                    <span>Beef patty, cheese, lettuce, tomato (TZS 8,000)</span>
-                </div>
-                <div class="lang_icon col">
-                    <img src="/static/assets/image/menu/Cheese Burger.jpg" alt="Cheese Burger">
-                    <span>Beef patty, cheese, lettuce, tomato (TZS 8,000)</span>
-                </div>
-                <div class="lang_icon col">
-                    <img src="/static/assets/image/menu/Cheese Burger.jpg" alt="Cheese Burger">
-                    <span>Beef patty, cheese, lettuce, tomato (TZS 8,000)</span>
-                </div>
-                <div class="lang_icon col">
-                    <img src="/static/assets/image/menu/Cheese Burger.jpg" alt="Cheese Burger">
-                    <span>Beef patty, cheese, lettuce, tomato (TZS 8,000)</span>
-                </div>
-                
-                </div>
+                    {% endfor %}
+                    {% endfor %}
+
+            </div>
         </div>
     </div>
 </body>
