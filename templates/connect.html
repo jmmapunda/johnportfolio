@@ -1,0 +1,92 @@
+{% include "headers.html" %}
+
+
+
+
+<body>
+  <div class="container">
+    <div class="row">
+      <!-- About content on the left side -->
+      <div class="col-md-6">
+        <div class="connectcover">
+          <h1>Let get Connected</h1>
+
+          <div>
+            <div class="row row-cols-2">
+            <div class="lang_icon col">
+                <a href="https://www.linkedin.com/in/john-mapunda007/">
+                  <img src="/static/assets/svg/LinkedIn.svg" alt="LinkedIn">
+                <span>LinkedIn</span>
+                </a>
+            </div>
+            <div class="lang_icon col">
+                <a href="https://www.instagram.com/johncaptain007">
+                  <img src="/static/assets/image/instagram.png" alt="Instagram">
+                <span>Instagram</span>
+                </a>
+            </div>
+            <div class="lang_icon col">
+                <a href="https://github.com/jmmapunda">
+                  <img src="/static/assets/svg/GitHub.svg" alt="GitHub">
+                <span>GitHub</span>
+                </a>
+            </div>
+            <div class="lang_icon col">
+                <a href="mailto:admin@johnmapunda.com"><div>
+                  <img src="/static/assets/image/email.png" alt="E-mail">
+                <span>E-mail</span>
+              </div>
+                </a>
+              </div>
+            
+            </div>
+        </div> 
+        </div>
+      </div>
+      <!-- Form on the right side -->
+      <div class="col-md-6">
+        <form method="POST" action="{{ url_for('connect') }}">
+          {{ connectform.csrf_token }}
+
+          <!-- Row for name and email fields side-by-side -->
+          <div class="row">
+            <div class="col-md-6">
+              <div class="mb-3">
+                <label for="name" class="form-label">Name</label>
+                {{ connectform.name(class="form-control form-control-sm text-muted") }}
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="mb-3">
+                <label for="email" class="form-label">Email</label>
+                {{ connectform.email(class="form-control form-control-sm text-muted") }}
+              </div>
+            </div>
+          </div>
+
+          <!-- Message field below -->
+          <div class="mb-3">
+            <label for="message" class="form-label">Message</label>
+            {{ connectform.message(class="form-control") }}
+          </div>
+
+          <!-- Submit button -->
+          <div class="d-flex mb-3 justify-content-end">
+            {{ connectform.submit(class="btn btn-outline-success btn-md w-100") }}
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+
+    </div>
+  </div>
+
+
+      
+
+
+</body>
+
+{% include "footer.html" %}

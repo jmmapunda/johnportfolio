@@ -1,17 +1,18 @@
 import os
 import smtplib
 from flask import Flask, render_template, redirect, url_for, request
+from flask.cli import load_dotenv
 from flask_wtf import FlaskForm
 from wtforms.validators import DataRequired, Email
 from wtforms.fields.simple import SubmitField, StringField, EmailField
 
-
+load_dotenv()
 app = Flask(__name__)
+app.config['SECRET_KEY'] = '12345'
 
 
 
-
-class AboutForm(FlaskForm):
+class ConnectForm(FlaskForm):
     name = StringField('Name:', validators=[DataRequired()])
     message = StringField('Message:', validators=[DataRequired()])
     email = EmailField('E-Mail:', validators=[DataRequired(), Email()])
@@ -200,11 +201,10 @@ menudata = {
     },
 }
 
-
-
 menukey = menudata.keys()
 
 
+@app.route("/home")
 @app.route("/")
 def home():
 
@@ -215,16 +215,22 @@ def menu():
 
     return render_template("menu.html", menudata=menudata, menukey=menukey)
 
-@app.route("/about", methods=['GET', 'POST'])
+@app.route("/about")
 def about():
-    aboutform = AboutForm()
-    if aboutform.validate_on_submit():
-        name = aboutform.name.data
-        email = aboutform.email.data
-        message = aboutform.message.data
-        my_email = os.getenv('my_email')
+
+    return render_template("about.html",)
+
+@app.route("/connect", methods=['GET', 'POST'])
+def connect():
+    connectform = ConnectForm()
+    if connectform.validate_on_submit():
+        name = connectform.name.data
+        email = connectform.email.data
+        message = connectform.message.data
+        my_email = 'admin@johnmapunda.com'
         password = os.getenv('password')
-        mail = os.getenv('mails')
+        mail = 'admin@johnmapunda.com'
+        print(password)
 
         with smtplib.SMTP("mail.johnmapunda.com", 587) as connection:
             connection.starttls()
@@ -237,7 +243,7 @@ def about():
 
         return redirect(url_for('home'))
 
-    return render_template("about.html", aboutform=aboutform,)
+    return render_template("connect.html", connectform=connectform,)
 
 
 if __name__ == '__main__':
