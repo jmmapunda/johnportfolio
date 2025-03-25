@@ -204,8 +204,8 @@ footer {
 
 }
 .menu img{
-  width: 200px;
-  height: 150px;
+  width: 150px;
+  height: 100px;
 }
 .scroll-container {
   overflow-x: auto;
@@ -222,7 +222,7 @@ footer {
 .lang_icon {
   display: flex; /* Align items in a row */
   align-items: center; /* Vertically center text with the image */
-  gap: 10px; /* Space between the image and text */
+  gap: 10px;
 }
 
 .lang_icon img {
@@ -231,7 +231,8 @@ footer {
   object-fit: cover;
 }
 
-span {
+.menu span {
   min-width: 250px;
+  padding-right: 10px;
 }
 
