@@ -26,16 +26,17 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="home">Home</a>
+                        <a class="nav-link {% if request.path == '/' or request.path == '/home' %}active{% endif %}" 
+                           aria-current="page" href="{{ url_for('home') }}">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="about">About</a>
+                        <a class="nav-link {% if request.path == '/about' %}active{% endif %}" href="{{ url_for('about') }}">About</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Services</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Projects</a>
+                        <a class="nav-link {% if request.path == '/connect' %}active{% endif %}" href="{{ url_for('connect') }}">Let's ConnecT</a>
                     </li>
                 </ul>
             </div>
@@ -108,7 +109,7 @@
                         <span>GitHub</span>
                     </div>
                     <div class="lang_icon col">
-                        <img src="/static/assets/svg/Visual Studio Code (VS Code).svg" alt="VS Code">
+                        <img src="/static/assets/svg/Visual_Studio_Code.svg" alt="VS Code">
                         <span>VS Code</span>
                     </div>
                     <div class="lang_icon col">
@@ -147,7 +148,14 @@
                 <div class="tools">Restaurant Menu
                 <img src="/static/assets/image/menu/restaurant_menu.png" alt="Restaurant">
             </div></a>
-            <div class="tools">Website Design</div>
+            <a href="https://movie.johnmapunda.com/">
+                <div class="tools">Website Design
+                <img src="/static/assets/image/movieweb.png" alt="Website">
+            </div></a>
+            <a href="home">
+                <div class="tools">Website Design
+                <img src="/static/assets/image/johnportfolio.png" alt="Website">
+            </div></a>
         </div>
       </main>
 
