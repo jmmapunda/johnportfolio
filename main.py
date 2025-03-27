@@ -1,6 +1,6 @@
 import os
 import smtplib
-from flask import Flask, render_template, redirect, url_for, request
+from flask import Flask, render_template, redirect, url_for, request, send_from_directory
 from flask.cli import load_dotenv
 from flask_wtf import FlaskForm
 from wtforms.validators import DataRequired, Email
@@ -244,6 +244,14 @@ def connect():
         return redirect(url_for('home'))
 
     return render_template("connect.html", connectform=connectform,)
+
+@app.route('/robots.txt')
+def serve_robots():
+    return send_from_directory(os.path.join(app.root_path, 'static'), 'robots.txt')
+
+@app.route('/sitemap.xml')
+def serve_sitemap():
+    return send_from_directory(os.path.join(app.root_path, 'static'), 'sitemap.xml')
 
 
 if __name__ == '__main__':
