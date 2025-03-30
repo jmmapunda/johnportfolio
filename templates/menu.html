@@ -21,7 +21,7 @@
                     <div class="row flex-nowrap">
                         {% for category, data in menudata.items(): %}
                         <a href="#{{ category }}" class="lang_icon col"><div >
-                            <img src="/static/assets/image/menu/{{ data['url'] | replace(' ', '_') }}" alt="{{ category }}">
+                            <img src="/static/assets/image/menu/{{ data['url'] | replace(' ', '_') }}" loading="lazy" alt="{{ category }}">
                             <span>{{ category }}</span>
                         </div></a>
                         {% endfor %}
@@ -37,7 +37,7 @@
                     {% for category, data in menudata.items(): %}
                         {% for item, item_data in data["items"].items(): %}
                 <div class="lang_icon col" id="{{ category }}">
-                    <img src="/static/assets/image/menu/{{ item_data['url'] | replace(' ', '_') }}" alt="{{ item }}">
+                    <img src="/static/assets/image/menu/{{ item_data['url'] | replace(' ', '_') }}" loading="lazy" alt="{{ item }}">
                     <span>{{ item }}: {{ item_data['description'] }} (TZS {{ item_data['price'] }})</span>
                 </div>
                     {% endfor %}
