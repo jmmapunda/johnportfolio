@@ -44,6 +44,9 @@ h2 {
   top: 0; /* Ensures it starts at the top */
   font-weight: 500;
 }
+p {
+  text-align: justify;
+}
 header{
   width: 100vw;
 }
@@ -145,7 +148,6 @@ header{
   position: relative; /* Needed for negative margins */
   z-index: 2; /* Ensure the divs appear above other elements */
   border-radius: 15px; /* Adjust the value for more/less curvature */
-
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Soft shadow effect */
 
   transition: box-shadow 0.3s ease-in-out; /* Smooth hover effect */
@@ -202,6 +204,7 @@ footer {
 }
 .services {
   background-color: #394180;
+  width: 100%;
   height: auto;
   display: flex;
   flex-wrap: wrap;
@@ -325,4 +328,10 @@ nav {
 .navbar-nav .nav-link:hover {
   color: #394180;
   font-weight: bold;
+}
+.col .tools {
+  margin: 0;
+}
+.services .container {
+  margin: 0;
 }
