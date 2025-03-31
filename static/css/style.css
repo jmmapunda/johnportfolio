@@ -266,6 +266,7 @@ footer {
   width: 100%;
   z-index: 1000; /* Keeps it above other elements */
   padding: 10px 0; /* Adds spacing inside the category bar */
+  background-color: #dbedf5;
 }
 .menu {
   margin-top: 140px;

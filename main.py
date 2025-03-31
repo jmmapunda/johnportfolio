@@ -25,7 +25,7 @@ menudata = {
             "Cheese Burger": {
                 "description": "Beef patty, cheese, lettuce, tomato",
                 "price": 8000,
-                "url": "Cheese Burger.jpg"  # Item URL
+                "url": "Cheese Burger.webp"  # Item URL
             },
             "BBQ Burger": {
                 "description": "Grilled beef, BBQ sauce, onions",
@@ -35,37 +35,37 @@ menudata = {
             "Veggie Burger": {
                 "description": "Plant-based patty, lettuce, mayo",
                 "price": 7500,
-                "url": "veggie burger.jpg"  # Item URL
+                "url": "veggie burger.webp"  # Item URL
             },
             "Spicy Burger": {
                 "description": "Jalapeños, spicy sauce, beef",
                 "price": 10000,
-                "url": "spicy burger.jpg"  # Item URL
+                "url": "spicy burger.webp"  # Item URL
             },
             "Mushroom Burger": {
                 "description": "Mushrooms, Swiss cheese, beef",
                 "price": 9000,
-                "url": "mushroom burger.jpg"  # Item URL
+                "url": "mushroom burger.webp"  # Item URL
             },
         }
     },
     "Pizzas": {
-        "url": "bbq chicken pizza.jpg",  # Category URL
+        "url": "bbq chicken pizza.webp",  # Category URL
         "items": {
             "Margherita": {
                 "description": "Tomato, mozzarella, basil",
                 "price": 12000,
-                "url": "margherita.jpg"  # Item URL
+                "url": "margherita.webp"  # Item URL
             },
             "Pepperoni": {
                 "description": "Pepperoni, cheese, tomato sauce",
                 "price": 14000,
-                "url": "pepperoni.jpeg"  # Item URL
+                "url": "pepperoni.webp"  # Item URL
             },
             "BBQ Chicken": {
                 "description": "BBQ chicken, onions, peppers",
                 "price": 15000,
-                "url": "bbq chicken pizza.jpg"  # Item URL
+                "url": "bbq chicken pizza.webp"  # Item URL
             },
             "Veggie Supreme": {
                 "description": "Bell peppers, mushrooms, olives",
@@ -80,17 +80,17 @@ menudata = {
         }
     },
     "Drinks": {
-        "url": "coke.png",  # Category URL
+        "url": "coke.webp",  # Category URL
         "items": {
             "Coke": {
                 "description": "Classic cola drink",
                 "price": 2500,
-                "url": "coke.png"  # Item URL
+                "url": "coke.webp"  # Item URL
             },
             "Orange Juice": {
                 "description": "Freshly squeezed oranges",
                 "price": 3500,
-                "url": "orange juice.jpg"  # Item URL
+                "url": "orange juice.webp"  # Item URL
             },
             "Lemonade": {
                 "description": "Sweet & sour lemon drink",
@@ -100,42 +100,42 @@ menudata = {
             "Iced Tea": {
                 "description": "Cold brewed tea with lemon",
                 "price": 3500,
-                "url": "iced tea.jpg"  # Item URL
+                "url": "iced tea.webp"  # Item URL
             },
             "Milkshake": {
                 "description": "Vanilla, chocolate, or strawberry",
                 "price": 5000,
-                "url": "milkshake.jpg"  # Item URL
+                "url": "milkshake.webp"  # Item URL
             },
         }
     },
     "Desserts": {
-        "url": "chocolate cake.jpg",  # Category URL
+        "url": "chocolate cake.webp",  # Category URL
         "items": {
             "Chocolate Cake": {
                 "description": "Rich, moist chocolate cake",
                 "price": 6000,
-                "url": "chocolate cake.jpg"  # Item URL
+                "url": "chocolate cake.webp"  # Item URL
             },
             "Cheesecake": {
                 "description": "Classic New York-style cheesecake",
                 "price": 7000,
-                "url": "cheesecake.jpg"  # Item URL
+                "url": "cheesecake.webp"  # Item URL
             },
             "Apple Pie": {
                 "description": "Warm apple pie with cinnamon",
                 "price": 5500,
-                "url": "apple pie.jpg"  # Item URL
+                "url": "apple pie.webp"  # Item URL
             },
             "Ice Cream Sundae": {
                 "description": "Vanilla ice cream, chocolate syrup",
                 "price": 5000,
-                "url": "ice cream sundae.jpg"  # Item URL
+                "url": "ice cream sundae.webp"  # Item URL
             },
             "Tiramisu": {
                 "description": "Italian coffee-flavored dessert",
                 "price": 8500,
-                "url": "tiramisu.avif"  # Item URL
+                "url": "tiramisu.webp"  # Item URL
             },
         }
     },
@@ -150,12 +150,12 @@ menudata = {
             "Chicken Alfredo": {
                 "description": "Creamy garlic sauce, grilled chicken",
                 "price": 11000,
-                "url": "chicken alfredo.jpg"  # Item URL
+                "url": "chicken alfredo.webp"  # Item URL
             },
             "Penne Arrabbiata": {
                 "description": "Spicy tomato sauce, parmesan",
                 "price": 9500,
-                "url": "penne arrabbiata.jpg"  # Item URL
+                "url": "penne arrabbiata.webp"  # Item URL
             },
             "Lasagna": {
                 "description": "Layered pasta, beef, ricotta cheese",
@@ -170,32 +170,32 @@ menudata = {
         }
     },
     "Seafood": {
-        "url": "grilled salmon.jpg",  # Category URL
+        "url": "grilled salmon.webp",  # Category URL
         "items": {
             "Grilled Salmon": {
                 "description": "Served with lemon butter sauce",
                 "price": 18000,
-                "url": "grilled salmon.jpg"  # Item URL
+                "url": "grilled salmon.webp"  # Item URL
             },
             "Garlic Shrimp": {
                 "description": "Sauteed shrimp in garlic butter",
                 "price": 16500,
-                "url": "garlic shrimp.jpg"  # Item URL
+                "url": "garlic shrimp.webp"  # Item URL
             },
             "Fish & Chips": {
                 "description": "Crispy battered fish, fries",
                 "price": 14000,
-                "url": "fish & chips.jpg"  # Item URL
+                "url": "fish & chips.webp"  # Item URL
             },
             "Lobster Thermidor": {
                 "description": "Baked lobster in creamy sauce",
                 "price": 25000,
-                "url": "lobster thermidor.jpg"  # Item URL
+                "url": "lobster thermidor.webp"  # Item URL
             },
             "Calamari Rings": {
                 "description": "Fried squid rings, tartar sauce",
                 "price": 13000,
-                "url": "calamari rings.jpg"  # Item URL
+                "url": "calamari rings.webp"  # Item URL
             },
         }
     },
