@@ -336,3 +336,9 @@ nav {
 .services .container {
   margin: 0;
 }
+
+.touch-target {
+  padding: 15px 25px;
+  font-size: 20px;
+  margin: 10px;
+}
