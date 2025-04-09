@@ -3,8 +3,9 @@ import smtplib
 from flask import Flask, render_template, redirect, url_for, request, send_from_directory
 from flask.cli import load_dotenv
 from flask_wtf import FlaskForm
-from wtforms.validators import DataRequired, Email
+from wtforms.validators import DataRequired, Email, NumberRange
 from wtforms.fields.simple import SubmitField, StringField, EmailField
+from wtforms import FloatField
 
 load_dotenv()
 app = Flask(__name__)
@@ -17,6 +18,10 @@ class ConnectForm(FlaskForm):
     message = StringField('Message:', validators=[DataRequired()])
     email = EmailField('E-Mail:', validators=[DataRequired(), Email()])
     submit = SubmitField('SEND')
+
+class CalculatorForm(FlaskForm):
+    salary = FloatField("Monthly Salary", validators=[DataRequired(), NumberRange(min=0)])
+    submit = SubmitField("Calculate")
 
 menudata = {
     "Burgers": {
@@ -244,6 +249,37 @@ def connect():
         return redirect(url_for('home'))
 
     return render_template("connect.html", connectform=connectform,)
+
+@app.route("/calculator", methods=['GET', 'POST'])
+def calculator():
+    calculatorform = CalculatorForm()
+    salary = None
+    nssf = None
+    taxable = None
+    paye = None
+    net = None
+    if calculatorform.validate_on_submit():
+        salary = calculatorform.salary.data
+        # salary = float(input("Gross Salary? "))
+        nssf = salary * 0.10
+        taxable = salary - nssf
+
+        paye = 0
+
+        if taxable <= 270000:
+            paye = 0
+        elif taxable <= 520000:
+            paye = (taxable - 270000) * 0.08
+        elif taxable <= 760000:
+            paye = 20000 + (taxable - 520000) * 0.20
+        elif taxable <= 1000000:
+            paye = 68000 + (taxable - 760000) * 0.25
+        else:
+            paye = 128000 + (taxable - 1000000) * 0.30
+
+        net = salary - nssf - paye
+
+    return render_template("calculator.html", calculatorform=calculatorform, taxable=taxable, nssf=nssf, paye=paye, net=net)
 
 @app.route('/robots.txt')
 def serve_robots():

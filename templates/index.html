@@ -78,7 +78,7 @@
                         <a class="nav-link {% if request.path == '/about' %}active{% endif %}" href="{{ url_for('about') }}">About</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Services</a>
+                        <a class="nav-link {% if request.path == '/calculator' %}active{% endif %}" href="{{ url_for('calculator') }}">calculator</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link {% if request.path == '/connect' %}active{% endif %}" href="{{ url_for('connect') }}">Let's ConnecT</a>
