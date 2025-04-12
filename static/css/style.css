@@ -28,13 +28,20 @@ h1{
   text-align: center;
   display: flex;
   justify-content: center;
-  height: 100vh;
-  margin: 0;
+  height: 75vh;
+  width: 90vw;
+  margin: 0 auto;
   font-size: 3.5rem;
   align-items: center;
   padding: 1vw;
   flex-wrap: wrap;
 }
+@media (max-width: 991px) {
+  h1 {
+    width: 100vw;
+  }
+}
+
 h2 {
   z-index: 1; /* Keeps it above any overlapping elements */
   text-align: center; /* Centers the text horizontally */
@@ -48,8 +55,15 @@ p {
   text-align: justify;
 }
 header{
-  width: 100vw;
+  margin: 0 auto;
+  width: 90vw;
 }
+@media (max-width: 991px) {
+  header {
+    width: 100vw;
+  }
+}
+
 /* Center navbar content */
 .navbar {
   display: flex;
@@ -111,7 +125,6 @@ header{
 }
 .blue{
   background-image: linear-gradient(to left, #A941D2, #2D0075);
-  background-color: #394180;
   width: 100vw;
   height: 40vh;
   margin: 0;
@@ -119,9 +132,20 @@ header{
   color: #ffffff;
   padding-right: 4vw;
 }
+.blue h2{
+  margin: 0 auto;
+  width: 90vw;
+}
+@media (max-width: 991px) {
+  .blue h2 {
+    width: 100vw;
+  }
+}
 /* Basic styling for the skills container */
 .skills {
   height: auto;
+  margin: auto;
+  width: 90vw;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around; /* Ensures spacing between languages and tools */
@@ -130,6 +154,11 @@ header{
   margin-top: -100px; /* Add a negative margin to overlap the div above it */
   z-index: 1; /* Ensure it's above the div it overlaps */
   position: relative; /* Helps control overlapping */
+}
+@media (max-width: 991px) {
+  .skills {
+    width: 100vw;
+  }
 }
 
 /* Styling for the individual items (languages and tools) */
@@ -158,19 +187,29 @@ header{
 }
 
 footer {
+  background-color: #000000;
+  margin-top: auto;
+
+}
+.footer {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between; /* Distribute space between sections */
+  justify-content: center;
   align-items: center;
   padding: 20px;
-  background-color: #000000;
   color: #ffffff;
   flex-wrap: wrap; /* Allows wrapping for small screens */
-  width: 100vw;
+  width: 90vw;
+  margin: 0 auto;
   font-size: 1.1em;
   margin-top: auto;
-}
 
+}
+@media (max-width: 991px) {
+  .footer {
+    width: 100vw;
+  }
+}
 /* Adjust footer1 to be slightly wider */
 .footer1 {
   flex: 2; /* Takes more space than footer2 */
@@ -205,7 +244,7 @@ footer {
 .services {
   background-image: linear-gradient(to left, #A941D2, #2D0075);
   background-color: #394180;
-  width: 100%;
+  width: 100vw;
   height: auto;
   display: flex;
   flex-wrap: wrap;
@@ -215,7 +254,26 @@ footer {
   margin-top: 0.01vh; /* Add a negative margin to overlap the div above it */
   z-index: 1; /* Ensure it's above the div it overlaps */
   position: relative; /* Helps control overlapping */
-
+}
+.services h2 {
+  width: 90vw;
+  text-align: left;
+  color: #ffffff;
+  margin: 15px 0;
+}
+@media (max-width: 991px) {
+  .services h2 {
+    width: 100vw;
+  }
+}
+.services .container {
+  margin: auto;
+  width: 90vw;
+}
+@media (max-width: 991px) {
+  .services .container {
+    width: 100vw;
+  }
 }
 .menu img{
   width: 150px;
@@ -283,6 +341,9 @@ footer {
 }
 .connectcover img {
   width: 50px;
+}
+.connectcover {
+  margin-top: 40px;
 }
 nav {
   font-size: x-large;
@@ -359,6 +420,10 @@ nav {
 }
 
 .calculator {
+  margin-top: 20px;
+}
+
+.calculatorform {
   margin: 15px;
 }
 
@@ -375,4 +440,13 @@ nav {
   text-align: justify;
   padding: 20px;
 }
+.secondrow {
+  margin-top: -80px;
+}
+@media (min-width: 991px) or (max-width: 767px) {
+  .secondrow {
+    margin-top: 0;
+  }
+}
+
 

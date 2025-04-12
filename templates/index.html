@@ -78,7 +78,7 @@
                         <a class="nav-link {% if request.path == '/about' %}active{% endif %}" href="{{ url_for('about') }}">About</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link {% if request.path == '/calculator' %}active{% endif %}" href="{{ url_for('calculator') }}">calculator</a>
+                        <a class="nav-link {% if request.path == '/calculator' %}active{% endif %}" href="{{ url_for('calculator') }}">Calculator</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link {% if request.path == '/connect' %}active{% endif %}" href="{{ url_for('connect') }}">Let's ConnecT</a>
@@ -95,7 +95,7 @@
           <h1>"Hello and welcome! Explore my journey, projects, and creativity in action. This is where ideas come to life—let’s create something amazing!"</h1>
         </div>
         <div class="blue">
-            <h2>John Mapunda - Web Developer Specializing in Python, Flask, and Automation</h2>
+            <h2>John Mapunda - Programmer Specializing in Python, Flask, Web development, Codding and Automation</h2>
 
         </div>
         <div class="skills">
@@ -189,6 +189,7 @@
 
         </div>
         <div class="services">
+            <div><h2>Projects:</h2></div>
             <div class="container text-center">
                 <div class="row row-cols-1 row-cols-lg-3 row-cols-md-2">
                   <div class="col">
@@ -209,7 +210,7 @@
                         <img src="/static/assets/image/johnportfolio.webp" alt="John Mapunda portfolio Website showcasing web Design project" loading="lazy">
                     </div></a>
                   </div>
-                  <div class="col">
+                  <div class="col secondrow">
                     <a href="home">
                         <div class="tools">Qr Code 
                         <img src="/static/assets/image/IMG_E4393.webp" alt="John mapunda Website Qr code design" loading="lazy">
@@ -227,10 +228,13 @@
 
     </section>
     <footer>
-        <div class="footer2">"Turn Your Vision into Reality"</div>
-        <div class="footer1">Every great project starts with a conversation. Let’s connect and turn your ideas into something impactful.</div>
-        <a href="connect"><div class="footer2"><button type="button" class="btn btn-outline-warning btn-lg touch-target">Let's ConnecT</button></div></a>
-        <div class="links">Copylight John Mapunda</div>
+        <div class="footer">
+            <div class="footer2">"Turn Your Vision into Reality"</div>
+            <div class="footer1">Every great project starts with a conversation. Let’s connect and turn your ideas into something impactful.</div>
+            <a href="connect"><div class="footer2"><button type="button" class="btn btn-outline-warning btn-lg touch-target">Let's ConnecT</button></div></a>
+            <div class="links">Copylight John Mapunda</div>
+        </div>
+        
 
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
