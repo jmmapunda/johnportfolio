@@ -1,3 +1,4 @@
+import datetime
 import os
 import smtplib
 from flask import Flask, render_template, redirect, url_for, request, send_from_directory
@@ -10,7 +11,6 @@ from wtforms import FloatField
 load_dotenv()
 app = Flask(__name__)
 app.config['SECRET_KEY'] = '12345'
-
 
 
 class ConnectForm(FlaskForm):
@@ -208,6 +208,9 @@ menudata = {
 
 menukey = menudata.keys()
 
+@app.context_processor
+def inject_current_year():
+    return {'current_year': datetime.datetime.now().year}
 
 @app.route("/home")
 @app.route("/")
