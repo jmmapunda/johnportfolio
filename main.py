@@ -272,15 +272,15 @@ def calculator():
         if taxable <= 270000:
             paye = 0
         elif taxable <= 520000:
-            paye = (taxable - 270000) * 0.08
+            paye = round(((taxable - 270000) * 0.08), 2)
         elif taxable <= 760000:
-            paye = 20000 + (taxable - 520000) * 0.20
+            paye = round((20000 + (taxable - 520000) * 0.20), 2)
         elif taxable <= 1000000:
-            paye = 68000 + (taxable - 760000) * 0.25
+            paye = round((68000 + (taxable - 760000) * 0.25), 2)
         else:
-            paye = 128000 + (taxable - 1000000) * 0.30
+            paye = round((128000 + (taxable - 1000000) * 0.30), 2)
 
-        net = salary - nssf - paye
+        net = round((salary - nssf - paye), 2)
 
     return render_template("calculator.html", calculatorform=calculatorform, taxable=taxable, nssf=nssf, paye=paye, net=net)
 
