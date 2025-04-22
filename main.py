@@ -264,7 +264,7 @@ def calculator():
     if calculatorform.validate_on_submit():
         salary = calculatorform.salary.data
         # salary = float(input("Gross Salary? "))
-        nssf = salary * 0.10
+        nssf = round((salary * 0.10), 2)
         taxable = salary - nssf
 
         paye = 0
