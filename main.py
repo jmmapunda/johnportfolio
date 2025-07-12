@@ -11,6 +11,13 @@ from wtforms import FloatField
 load_dotenv()
 app = Flask(__name__)
 app.config['SECRET_KEY'] = '12345'
+RECAPTCHA_PUBLIC_KEY = '6Lce9oArAAAAALb_2FxV6nB82UqWNz5AkzzgsYdg'
+RECAPTCHA_PRIVATE_KEY = os.getenv('SECRET_KEY')
+RECAPTCHA_DATA_ATTRS = {'theme': 'light'}  # Optional styling
+RECAPTCHA_PARAMETERS = {'render': 'explicit'}  # Important for v3 compatibility
+
+app.config['RECAPTCHA_PUBLIC_KEY'] = '6Lce9oArAAAAALb_2FxV6nB82UqWNz5AkzzgsYdg'
+app.config['RECAPTCHA_PRIVATE_KEY'] = RECAPTCHA_PRIVATE_KEY
 
 
 class ConnectForm(FlaskForm):
@@ -246,12 +253,12 @@ def connect():
             connection.sendmail(
                 from_addr=my_email,
                 to_addrs=mail,
-                msg=f"Subject:{email}\n\nHello i am {name} \nMessage:{message}\n{email}."
+                msg=f"Subject:{email}\n\nHello i am {name} \nMessage: {message}\n{email}."
                 )
 
         return redirect(url_for('home'))
 
-    return render_template("connect.html", connectform=connectform,)
+    return render_template("connect.html", connectform=connectform, )
 
 @app.route("/calculator", methods=['GET', 'POST'])
 def calculator():
