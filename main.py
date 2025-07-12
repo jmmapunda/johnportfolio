@@ -16,6 +16,7 @@ RECAPTCHA_PRIVATE_KEY = os.getenv('SECRET_KEY')
 RECAPTCHA_DATA_ATTRS = {'theme': 'light'}  # Optional styling
 RECAPTCHA_PARAMETERS = {'render': 'explicit'}  # Important for v3 compatibility
 
+
 app.config['RECAPTCHA_PUBLIC_KEY'] = '6Lce9oArAAAAALb_2FxV6nB82UqWNz5AkzzgsYdg'
 app.config['RECAPTCHA_PRIVATE_KEY'] = RECAPTCHA_PRIVATE_KEY
 
