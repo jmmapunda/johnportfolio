@@ -7,6 +7,7 @@ from flask_wtf import FlaskForm
 from wtforms.validators import DataRequired, Email, NumberRange
 from wtforms.fields.simple import SubmitField, StringField, EmailField
 from wtforms import FloatField
+from supabase import create_client, Client
 
 load_dotenv()
 app = Flask(__name__)
@@ -15,6 +16,9 @@ RECAPTCHA_PUBLIC_KEY = '6Lce9oArAAAAALb_2FxV6nB82UqWNz5AkzzgsYdg'
 RECAPTCHA_PRIVATE_KEY = os.getenv('SECRET_KEY')
 RECAPTCHA_DATA_ATTRS = {'theme': 'light'}  # Optional styling
 RECAPTCHA_PARAMETERS = {'render': 'explicit'}  # Important for v3 compatibility
+supabase_url = os.getenv("SUPABASE_URL")
+supabase_key = os.getenv("SUPABASE_KEY")
+supabase: Client = create_client(supabase_url, supabase_key)
 
 
 app.config['RECAPTCHA_PUBLIC_KEY'] = '6Lce9oArAAAAALb_2FxV6nB82UqWNz5AkzzgsYdg'
@@ -272,6 +276,7 @@ def calculator():
     if calculatorform.validate_on_submit():
         salary = calculatorform.salary.data
         # salary = float(input("Gross Salary? "))
+        sbt_insert = (supabase.table('calculator').insert({'salary_data': salary}).execute())
         nssf = round((salary * 0.10), 2)
         taxable = salary - nssf
 
