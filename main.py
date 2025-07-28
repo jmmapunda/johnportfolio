@@ -8,6 +8,7 @@ from wtforms.validators import DataRequired, Email, NumberRange
 from wtforms.fields.simple import SubmitField, StringField, EmailField
 from wtforms import FloatField
 from supabase import create_client, Client
+import emails
 
 load_dotenv()
 app = Flask(__name__)
@@ -250,16 +251,33 @@ def connect():
         my_email = 'admin@johnmapunda.com'
         password = os.getenv('password')
         mail = 'admin@johnmapunda.com'
-        print(password)
 
-        with smtplib.SMTP("mail.johnmapunda.com", 587) as connection:
-            connection.starttls()
-            connection.login(user=my_email, password=password)
-            connection.sendmail(
-                from_addr=my_email,
-                to_addrs=mail,
-                msg=f"Subject:{email}\n\nHello i am {name} \nMessage: {message}\n{email}."
-                )
+        message = emails.Message(
+            subject="Website Message",
+            text=f"Hello,\n\nI am {name} \nMessage: {message}\n{email}.",
+            mail_from=("John Mapunda(Admin)", "admin@johnmapunda.com")
+            )
+
+        response = message.send(to="admin@johnmapunda.com", smtp={
+            "host": "mail.johnmapunda.com",
+            "port": 587,
+            "user": "admin@johnmapunda.com",
+            "password": password,
+            "tls": True
+            })
+        if response.status_code == 250:
+            print("Email sent successfully!")
+        else:
+            print(f"Failed to send email: {response}")
+
+        # with smtplib.SMTP("mail.johnmapunda.com", 587) as connection:
+        #     connection.starttls()
+        #     connection.login(user=my_email, password=password)
+        #     connection.sendmail(
+        #         from_addr=my_email,
+        #         to_addrs=mail,
+        #         msg=f"Subject:{email}\n\nHello i am {name} \nMessage: {message}\n{email}."
+        #         )
 
         return redirect(url_for('home'))
 
