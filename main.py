@@ -10,6 +10,7 @@ from wtforms import FloatField
 from supabase import create_client, Client
 import emails
 
+
 load_dotenv()
 app = Flask(__name__)
 app.config['SECRET_KEY'] = '12345'
