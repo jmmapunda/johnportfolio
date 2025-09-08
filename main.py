@@ -20,7 +20,6 @@ RECAPTCHA_DATA_ATTRS = {'theme': 'light'}  # Optional styling
 RECAPTCHA_PARAMETERS = {'render': 'explicit'}  # Important for v3 compatibility
 supabase_url = os.getenv("SUPABASE_URL")
 supabase_key = os.getenv("SUPABASE_KEY")
-APPLE_MAIL = os.getenv("APPLE_MAIL")
 supabase: Client = create_client(supabase_url, supabase_key)
 
 
@@ -253,6 +252,7 @@ def connect():
         my_email = 'admin@johnmapunda.com'
         password = os.getenv('password')
         APPLE_MAIL = os.getenv('APPLE_MAIL')
+        APPLE_USER_ID = os.getenv('APPLE_USER_ID')
         mail = 'admin@johnmapunda.com'
 
         message = emails.Message(
@@ -264,7 +264,7 @@ def connect():
         response = message.send(to="admin@johnmapunda.com", smtp={
             "host": "smtp.mail.me.com",
             "port": 587,
-            "user": "john.mapunda@icloud.com",
+            "user": APPLE_USER_ID,
             "password": APPLE_MAIL,
             "tls": True
             })
