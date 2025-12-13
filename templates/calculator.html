@@ -99,7 +99,9 @@
       <main class="calculator">
         <h2>Tanzania PAYE Calculator</h2>
         <form method="POST" action="{{ url_for('calculator') }}">
-        {{ calculatorform.csrf_token }}
+<!--        {{ calculatorform.csrf_token }}-->
+            {{ calculatorform.hidden_tag() }}
+
 
         <!-- Row for name and email fields side-by-side -->
         <div class="calculatorform">
@@ -122,7 +124,7 @@
                           <tr>
                       
                             <td>Gross Salary:</td>
-                            <td>{{ calculatorform.salary(class="form-control form-control-sm text-muted medium-input") }}</td>
+                            <td>{{ calculatorform.salary(class="form-control form-control-sm text-muted medium-input", id="salary") }}</td>
                             <td>{{ calculatorform.submit(class="btn btn-outline-success btn-sm w-100") }}</td>
                           </tr>
                           <tr>
@@ -177,3 +179,28 @@
 
     </section>
     {% include "footer.html" %}
+
+<script>
+const salaryInput = document.getElementById("salary");
+
+salaryInput.addEventListener("input", function () {
+    // Allow digits and at most one decimal
+    let raw = this.value.replace(/[^0-9.]/g, "");
+
+    // Remove extra decimals if user types more than one
+    const parts = raw.split(".");
+    if (parts.length > 2) {
+        raw = parts[0] + "." + parts[1];
+    }
+
+    // Format integer part with commas
+    let [integer, decimal] = raw.split(".");
+    integer = integer ? Number(integer).toLocaleString("en-US") : "0";
+
+    this.value = decimal !== undefined ? integer + "." + decimal : integer;
+});
+</script>
+
+
+
+

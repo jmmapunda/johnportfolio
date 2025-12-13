@@ -34,7 +34,7 @@ class ConnectForm(FlaskForm):
     submit = SubmitField('SEND')
 
 class CalculatorForm(FlaskForm):
-    salary = FloatField("Monthly Salary", validators=[DataRequired(), NumberRange(min=0)])
+    salary = StringField("Monthly Salary", validators=[DataRequired()])
     submit = SubmitField("Calculate")
 
 menudata = {
@@ -295,7 +295,8 @@ def calculator():
     paye = None
     net = None
     if calculatorform.validate_on_submit():
-        salary = calculatorform.salary.data
+        salary_raw = calculatorform.salary.data
+        salary = float(salary_raw.replace(',', ''))
         # salary = float(input("Gross Salary? "))
         sbt_insert = (supabase.table('calculator').insert({'salary_data': salary}).execute())
         nssf = round((salary * 0.10), 2)
@@ -315,6 +316,14 @@ def calculator():
             paye = round((128000 + (taxable - 1000000) * 0.30), 2)
 
         net = round((salary - nssf - paye), 2)
+
+        nssf = "{:,.2f}".format(nssf)
+        taxable = "{:,.2f}".format(taxable)
+        paye = "{:,.2f}".format(paye)
+        net = "{:,.2f}".format(net)
+
+        calculatorform.salary.data = "{:,.2f}".format(salary)
+
 
     return render_template("calculator.html", calculatorform=calculatorform, taxable=taxable, nssf=nssf, paye=paye, net=net)
 
