@@ -302,6 +302,7 @@ def calculator():
         nssf = round((salary * 0.10), 2)
         taxable = salary - nssf
 
+
         paye = 0
 
         if taxable <= 270000:
